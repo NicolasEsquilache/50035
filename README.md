@@ -9,3 +9,9 @@ Desarrollo de mi aplicacion
 POST productos
 
 ![alt text](image.png)
+
+```javascript
+function sumar (a,b){
+    return a + b
+}
+```
