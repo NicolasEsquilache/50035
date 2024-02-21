@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const orderCollection = "orders"
+const orderCollection = "students"
 
 const orderSchema = new mongoose.Schema({
     name: String,
