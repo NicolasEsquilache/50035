@@ -2,7 +2,7 @@ const passport = require('passport');
 const local = require('passport-local')
 
 const userService = require('../models/user.js')
-const { createHash, isValidPassword } = require('../../../utils.js');
+const { createHash, isValidatePassword } = require('../../../utils.js');
 const User = require('../models/user.js');
 
 
@@ -44,7 +44,7 @@ const initializePassport = () => {
                 console.log('Usuario no existe')
                 return done(null, false)
             }
-            if (!isValidPassword(user, password)) return done(null, false)
+            if (!isValidatePassword(user, password)) return done(null, false)
             return done(null, user)
         } catch (error) {
             return done(error)

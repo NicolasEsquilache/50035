@@ -19,11 +19,11 @@ mongoose.connect('mongodb+srv://omanias:1234562023@cluster0.3lmci0d.mongodb.net/
 app.use(session({
     store: MongoStore.create({
         mongoUrl: 'mongodb+srv://omanias:1234562023@cluster0.3lmci0d.mongodb.net/auth?retryWrites=true&w=majority',
-        ttl: 600,
+        ttl: 900,
     }),
     secret: 'coderSecret',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
 
 
