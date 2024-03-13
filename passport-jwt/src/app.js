@@ -44,8 +44,8 @@ app.get('/current', passport.authenticate('jwt', { session: false }), (req, res)
 
 /* app.get('/current', passportCall('jwt'), (req, res) => {
     res.send(req.user);
-}) */
-
+})
+ */
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
