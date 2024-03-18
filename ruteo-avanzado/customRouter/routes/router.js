@@ -1,6 +1,5 @@
 import { Router } from "express";
 
-
 export default class UserRouter {
     constructor() {
         this.router = Router();
@@ -13,7 +12,6 @@ export default class UserRouter {
 
     init() { }
 
-
     get(path, ...callbacks) {
         this.router.get(path, this.applyCallbacks(callbacks));
     }
@@ -21,7 +19,7 @@ export default class UserRouter {
     applyCallbacks(callbacks) {
         return callbacks.map((callback) => async (...params) => {
             try {
-                await callback.apply(this, params); // Corregir esta línea
+                await callback.apply(this, params);
             } catch (error) {
                 console.log(error);
                 params[1].status(500).send(error);

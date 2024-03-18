@@ -12,6 +12,8 @@ function handlePolicies(policies) {
             return res.status(401).json({ message: "No token provided" });
         }
 
+        if (policies[0] === "PUBLIC") return next()
+
         jwt.verify(token.split(" ")[1], 'secret', (err, decoded) => {
             if (err) {
                 return res.status(403).json({ message: "Failed to authenticate token" });
