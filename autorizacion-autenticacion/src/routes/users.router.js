@@ -14,9 +14,9 @@ router.get("/register", async (req, res) => {
 })
 
 router.get("/profile", async (req, res) => {
-    /*  if (!req.session.user) {
+      if (!req.session.user) {
          return res.redirect("login")
-     } */
+     } 
 
     const { first_name, last_name, email, age } = req.session.user
 
@@ -29,11 +29,11 @@ router.post('/register', async (req, res) => {
     if (!first_name || !last_name || !email || !age || !password) {
         return res.status(400).send({ status: "error", error: "Faltan datos" });
     }
-    /*  const user = await User.findOne({ email: email });
+     const user = await User.findOne({ email: email });
      if (user) {
-         return res.status(400).send({ status: "error", error: "El usuario ya existe" });
-     } */
-    const user = new User({
+         return res.status(400).send({ status: "error", error: "El usuario ya existe" })
+     } 
+     user = new User({
         first_name,
         last_name,
         email,
@@ -45,7 +45,7 @@ router.post('/register', async (req, res) => {
 
     res.send({ status: "ok", message: "Usuario creado", payload: user });
     await user.save()
-    // res.redirect('/login');
+    res.redirect('/login');
 });
 
 router.post("/login", async (req, res) => {

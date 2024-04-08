@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://omanias:1234562023@cluster0.3lmci0d.mongodb.net/auth?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://nicolasesquilache:coderhouse@cluster0.f2gsvyw.mongodb.net/prueba?retryWrites=true&w=majority&appName=Cluster0');
 
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://omanias:1234562023@cluster0.3lmci0d.mongodb.net/auth?retryWrites=true&w=majority',
+        mongoUrl: 'mongodb+srv://nicolasesquilache:coderhouse@cluster0.f2gsvyw.mongodb.net/prueba?retryWrites=true&w=majority&appName=Cluster0',
         ttl: 900,
     }),
     secret: 'coderSecret',
